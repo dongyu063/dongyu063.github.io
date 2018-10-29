@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>如何在 Windows 设置 Nginx 为服务？</h1>
+    <hr>
+    <h2>现状</h2>
+    <p>当前 Nginx 版本为：1.14.0</p>
+    <p>从 <a href="https://nginx.org/en/" target="_blank">Nginx 官网</a>下载来的Nginx压缩包解压后直接运行 nginx.exe 没有注册为服务。</p>
+    <h2>目标</h2>
+    <p>将 Nginx 注册为 Windows 服务。</p>
+    <h2>步骤</h2>
+    <ol>
+        <li>将下载来的 Nginx 压缩包解压至 X:\path\to\nginx-1.14.0 。</li>
+        <li>下载 nssm 解压至任意位置。 （建议直接解压至 X:\path\to\nginx-1.14.0 目录下）。</li>
+        <li>运行 cmd 并切换工作路径至 nssm.exe 目录（注意当前操作系统位数）。</li>
+        <li>在 cmd 输入 <code>nssm.exe install "Nginx"</code> 并回车执行。</li>
+        <li>稍等片刻会打开 nssm 对话框，在对话框里选择 nginx.exe ，点击 Install 按钮。</li>
+        <li>打开本地服务就可以搜索到 Nginx 服务了。</li>
+    </ol>
+    <hr>
+    <h2>参考</h2>
+    <p>Stackoverflow <a href="https://stackoverflow.com/questions/10061191/add-nginx-exe-as-windows-system-service-like-apache/21869387#21869387">Add nginx.exe as Windows system service (like Apache)?</a></p>
+</body>
+</html>
