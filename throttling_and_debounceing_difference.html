@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>throttle和debounce的区别</h1>
+<h2>throttle限制函数随着时间的推移可被调用的最大次数。<small>如：每100毫秒最多执行一次函数</small></h2>
+<p>假设正常情况下你要在10秒内调用此函数1000次。如果使用throttle限制此函数每100毫秒执行一次，那么它最多执行100次。</p>
+<p>(10s * 1000) = 10000ms</p>
+<p>10000ms / 100ms = 100 最大调用次数</p>
+<h2>debounce限制函数不会再被调用，直到一定的时间过去。<small>如：只有当100毫秒内，这个函数没有被调用过，调用它</small></h2>
+<p>想象一下一个函数在3秒内不断被调用1000次（如，绑定scroll事件且快速不断的滚动鼠标滚轮）。如果你使用debounce限制它的调用，它只会在你停止蹂躏鼠标滚轮时才会调用。</p>
+<h2>示例</h2>
+<p>这两个函数在Underscore和Lodash都有提供。</p>
+
+<h5>throttle:</h5>
+
+<pre>
+    <code>
+        $('body').on('scroll', _.throttle(function () {
+            // do something
+        }))
+    </code>
+</pre>
+
+<h5>debounce:</h5>
+
+<pre>
+    <code>
+        $('body').on('scroll', _.debounce(function () {
+            // do something
+        }))
+    </code>
+</pre>
+
+<h2>DEMOS:</h2>
+
+<iframe src="https://stackblitz.com/edit/js-pbaauh?embed=1&view=preview" width="800" height="500" frameborder="0"></iframe>
+
+<h2>译自</h2>
+<p><a href="https://css-tricks.com/the-difference-between-throttling-and-debouncing/">https://css-tricks.com/the-difference-between-throttling-and-debouncing/</a></p>
+</body>
+</html>
